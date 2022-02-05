@@ -18,7 +18,11 @@ class Produk extends CI_Controller
         $data['user'] = $this->loggedUser;
         $data['modelTitle'] = 'Produk';
         $data['title'] = 'Toko Makanan Khas';
-        $data['totalCart'] =  $this->KeranjangModel->total_rows_by_user($this->loggedUser['id']);
+        if ($this->loggedUser != null) {
+            $data['totalCart'] =  $this->KeranjangModel->total_rows_by_user($this->loggedUser['id']);
+        } else {
+            $data['totalCart'] =  0;
+        }
         $jumlah_data = $this->ProdukModel->total_rows();
         $this->load->library('pagination');
         $config['base_url'] = base_url('produk/index/');
@@ -58,7 +62,11 @@ class Produk extends CI_Controller
         $data['produk'] = $this->ProdukModel->get_by_id($id);
         $data['kategori'] = $this->KategoriModel->get_all();
         $data['satuan'] = $this->SatuanModel->get_all();
-        $data['totalCart'] =  $this->KeranjangModel->total_rows_by_user($this->loggedUser['id']);
+        if ($this->loggedUser != null) {
+            $data['totalCart'] =  $this->KeranjangModel->total_rows_by_user($this->loggedUser['id']);
+        } else {
+            $data['totalCart'] =  0;
+        }
         $this->load->view('tamplates/header', $data);
         $this->load->view('tamplates/home_topbar', $data);
         $this->load->view('detail_produk', $data);
@@ -103,7 +111,11 @@ class Produk extends CI_Controller
         $data['kategori'] = $this->KategoriModel->get_all();
         $data['kategori_pilih'] = $this->KategoriModel->get_by_id($id);
         $data['title'] = 'Kategori Produk ' . $data['kategori_pilih']->nama_kategori;
-        $data['totalCart'] =  $this->KeranjangModel->total_rows_by_user($this->loggedUser['id']);
+        if ($this->loggedUser != null) {
+            $data['totalCart'] =  $this->KeranjangModel->total_rows_by_user($this->loggedUser['id']);
+        } else {
+            $data['totalCart'] =  0;
+        }
         $this->load->view('tamplates/header', $data);
         $this->load->view('tamplates/home_topbar', $data);
         $this->load->view('produk', $data);

@@ -4,7 +4,6 @@ function isLogin()
     $ci = get_instance();
     if (!$ci->session->userdata('email')) {
         $ci->session->set_flashdata('message', '<div class="alert alert-success text-center" role="alert">Silahkan Login untuk melanjutkan.</div>');
-
         redirect('auth');
     } else {
         $modul = $ci->uri->segment(1);

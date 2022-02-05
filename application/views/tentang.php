@@ -6,6 +6,7 @@
     <!-- DataTales Example -->
 
     <?= $this->session->flashdata('message'); ?>
+    <?php unset($_SESSION['message']); ?>
     <div class="row">
         <div class="col-sm-3">
             <div class="card shadow mb-4">
@@ -37,14 +38,14 @@
                 </div>
                 <div class="card-body">
                     <div class="text-center">
-                    <a class="nav-link h3 text-primary mx-auto" href="<?= base_url(); ?>">
-                      <div class="sidebar-brand-icon rotate-n-15 mb-4">
-                        <i class="fa fa-store fa-3x"></i>
-                      </div>
-                      <div class="sidebar-brand-text mx-3"><b>Makanan Khas</b></div>
-                    </a>
-                  </div>
-                   <p>Selamat datang di situs belanja online yang memberikan kemudahan,kecepatan dan kenyamanan bagi hidup anda,Praktis tidak perlu berpergian hanya untuk membeli kebutuhan anda, tidak perlu mengantri untuk berbelanja,tidak perlu bermacet macet di jalan. Hanya dengan memilih apa yang anda pesan kami akan mengantar ketempat anda berada,hemat biaya, hemat tenaga,praktis,cepat, kami siap melayani anda.</p>
+                        <a class="nav-link h3 text-primary mx-auto" href="<?= base_url(); ?>">
+                            <div class="sidebar-brand-icon rotate-n-15 mb-4">
+                                <i class="fa fa-store fa-3x"></i>
+                            </div>
+                            <div class="sidebar-brand-text mx-3"><b>Makanan Khas</b></div>
+                        </a>
+                    </div>
+                    <p>Selamat datang di situs belanja online yang memberikan kemudahan,kecepatan dan kenyamanan bagi hidup anda,Praktis tidak perlu berpergian hanya untuk membeli kebutuhan anda, tidak perlu mengantri untuk berbelanja,tidak perlu bermacet macet di jalan. Hanya dengan memilih apa yang anda pesan kami akan mengantar ketempat anda berada,hemat biaya, hemat tenaga,praktis,cepat, kami siap melayani anda.</p>
 
                     <p>Hingga kini Toko makanan khas sudah mempunyai banyak pelanggan tetap dan terus bertambah dari waktu ke waktu.</p>
 

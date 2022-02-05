@@ -29,6 +29,7 @@
 
 
     <?= $this->session->flashdata('message'); ?>
+    <?php unset($_SESSION['message']); ?>
     <!-- DataTales Example -->
 
     <div class="card shadow mb-4">

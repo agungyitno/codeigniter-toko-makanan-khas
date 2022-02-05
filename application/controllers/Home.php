@@ -18,7 +18,11 @@ class Home extends CI_Controller
 		$data['user'] = $this->loggedUser;
 		$data['modelTitle'] = 'Produk';
 		$data['title'] = 'Toko Makanan Khas';
-		$data['totalCart'] =  $this->KeranjangModel->total_rows_by_user($this->loggedUser['id']);
+		if ($this->loggedUser != null) {
+			$data['totalCart'] =  $this->KeranjangModel->total_rows_by_user($this->loggedUser['id']);
+		} else {
+			$data['totalCart'] =  0;
+		}
 		$jumlah_data = $this->ProdukModel->total_rows();
 		$this->load->library('pagination');
 		$config['base_url'] = base_url('produk/index/');

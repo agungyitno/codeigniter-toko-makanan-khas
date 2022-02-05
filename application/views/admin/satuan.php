@@ -17,6 +17,7 @@
         </div>
     </div>
     <?= $this->session->flashdata('message'); ?>
+    <?php unset($_SESSION['message']); ?>
 
     <!-- DataTales Example -->
 

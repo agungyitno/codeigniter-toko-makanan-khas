@@ -6,6 +6,7 @@
     <!-- DataTales Example -->
 
     <?= $this->session->flashdata('message'); ?>
+    <?php unset($_SESSION['message']); ?>
     <div class="row">
 
         <div class="col-sm-12">

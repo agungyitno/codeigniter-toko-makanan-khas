@@ -24,6 +24,7 @@
     </div>
 
     <?= $this->session->flashdata('message'); ?>
+    <?php unset($_SESSION['message']); ?>
     <!-- DataTales Example -->
     <div class="row">
         <div class="col-sm-8">
@@ -70,34 +71,34 @@
                     </table>
                 </div>
             </div>
-            <?php if(!empty($bukti)): ?>
-            <div class="card shadow mb-4">
-                <div class="card-body">
-                    <!-- <div class="text-center text-lg">
+            <?php if (!empty($bukti)) : ?>
+                <div class="card shadow mb-4">
+                    <div class="card-body">
+                        <!-- <div class="text-center text-lg">
                         <div class="rotate-n-15">
                             <i class="fa fa-store fa-2x"></i>
                         </div><b>Makanan Khas</b>
                     </div>
                     <hr> -->
-                    <h3 class="text-center font-weight-bold">Bukti Pembayaran</h3>
-                    <div class="text-center"><b>No. Pesanan :</b> <?= $bukti->pesanan_id; ?></div>
-                    <div class="row mb-2">
-                        <div class="col">
-                            <div><b>Pelanggan :</b></div>
-                            <p><?= $bukti->name; ?></p>
-                        </div>
-                        <div class="col text-right">
-                            <!-- <div><b>No. Pesanan :</b></div>
+                        <h3 class="text-center font-weight-bold">Bukti Pembayaran</h3>
+                        <div class="text-center"><b>No. Pesanan :</b> <?= $bukti->pesanan_id; ?></div>
+                        <div class="row mb-2">
+                            <div class="col">
+                                <div><b>Pelanggan :</b></div>
+                                <p><?= $bukti->name; ?></p>
+                            </div>
+                            <div class="col text-right">
+                                <!-- <div><b>No. Pesanan :</b></div>
                             <p><?= $bukti->pesanan_id; ?></p> -->
-                            <div><b>Tanggal pembayaran:</b></div>
-                            <p><?= date('d/m/Y', $bukti->tanggal_konfirmasi); ?></p>
+                                <div><b>Tanggal pembayaran:</b></div>
+                                <p><?= date('d/m/Y', $bukti->tanggal_konfirmasi); ?></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="text-center">
-                        <img src="<?= base_url('assets/img/pembayaran/').$bukti->bukti; ?>" class="img-thumbnail mw-100 px-4 py-4">
+                        <div class="text-center">
+                            <img src="<?= base_url('assets/img/pembayaran/') . $bukti->bukti; ?>" class="img-thumbnail mw-100 px-4 py-4">
+                        </div>
                     </div>
                 </div>
-            </div>
             <?php endif; ?>
         </div>
         <div class="col-sm-4">
